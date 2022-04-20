@@ -8,9 +8,25 @@
 import Foundation
 
 enum ActivitySection: CaseIterable {
-    case Tainan
+    case Pingtung
     case Kaohsiung
-    case Chiayi
+    case Tainan
+    case ChiayiCity
+    case ChiayiCountry
+    case Yunlin
+    case Nantou
+    case Changhua
+    case Miaoli
+    case Taichung
+    case Yilan
+    case HsinchuCountry
+    case HsinchuCity
+    case Taoyuan
+    case Keelung
+    case NewTaipei
+    case Taipei
+    case Taitung
+    case Hualien
 }
 
 struct Activity: Hashable {

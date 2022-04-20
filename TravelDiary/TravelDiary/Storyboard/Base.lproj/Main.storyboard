@@ -412,7 +412,7 @@
                             <outlet property="delegate" destination="vYk-ws-L1J" id="90i-wz-kcQ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Activity" image="figure.walk" catalog="system" id="Vao-Fz-vrW"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="figure.walk" catalog="system" id="RGc-IB-OBT"/>
                     <navigationItem key="navigationItem" title="Activity" id="SvL-6g-Msz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J82-ka-bWL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -564,7 +564,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Fl6-AD-t3o" kind="relationship" relationship="viewControllers" id="5er-eF-BHq"/>
-                        <segue destination="vYk-ws-L1J" kind="relationship" relationship="viewControllers" id="lTB-3f-JDl"/>
+                        <segue destination="vYk-ws-L1J" kind="relationship" relationship="viewControllers" id="8Or-1t-fjk"/>
                         <segue destination="eJJ-BK-qe6" kind="relationship" relationship="viewControllers" id="X5H-NX-7ey"/>
                     </connections>
                 </tabBarController>
