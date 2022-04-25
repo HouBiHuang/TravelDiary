@@ -20,6 +20,12 @@ class FriendsBirthdayTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        UserDefaults.standard.set(true, forKey: "pushedNotification")
+//        if UserDefaults.standard.bool(forKey: "pushedNotification") {
+//            return
+//        } else {
+//            pushNotification
+//        }
         navigationController?.navigationBar.prefersLargeTitles = true //大標題
         
         if let appearance = navigationController?.navigationBar.standardAppearance {
@@ -88,17 +94,27 @@ class FriendsBirthdayTableViewController: UITableViewController {
         // Delete action
         let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("Delete", comment: "Delete")) { (action, sourceView, completionHandler) in
             
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                let context = appDelegate.persistentContainer.viewContext
-                
-                //取消通知
-                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [friendsBirthday.notificationIdentifier])
-                
-                context.delete(friendsBirthday)
-                appDelegate.saveContext()
-                
-                self.updateSnapshot(animatingChange: true)
+            let alertController = UIAlertController(title: "Delete", message: "Are you sure you want to delete?", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Yes", style: .destructive) { _ in
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    let context = appDelegate.persistentContainer.viewContext
+
+                    //取消通知
+                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [friendsBirthday.notificationIdentifier])
+
+                    context.delete(friendsBirthday)
+                    appDelegate.saveContext()
+
+                    self.updateSnapshot(animatingChange: true)
+                }
             }
+            alertController.addAction(okAction)
+            
+            let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            self.present(alertController, animated: true, completion: nil)
             
             // Call completion handler to dismiss the action button
             completionHandler(true)
