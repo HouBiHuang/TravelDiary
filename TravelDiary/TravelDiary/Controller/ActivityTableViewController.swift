@@ -115,6 +115,9 @@ class ActivityTableViewController: UITableViewController {
         }
         
         dataSource.apply(snapshot, animatingDifferences: false)
+        
+        //移至cell最頂端
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     //MARK: -- OutputPhoto
     func outputPhoto(area: String) {
@@ -161,7 +164,7 @@ class ActivityTableViewController: UITableViewController {
                               width: floatyButton.frame.size.width,
                               height: floatyButton.frame.size.height)
         
-        //移至最頂端
+        //移至cell最頂端
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
@@ -172,7 +175,8 @@ class ActivityTableViewController: UITableViewController {
         let yPst = self.view.frame.size.height - tabBar_height - 55 //55:floatyButton.height + 5
         floatyButton.frame = CGRect(x: xPst, y: yPst, width: 50, height: 50)
         floatyButton.setTitle("南", for: .normal)
-        floatyButton.backgroundColor = UIColor(named: "NavigationBarTitle")
+        floatyButton.setTitleColor(UIColor(named: "NavigationBarTitle"), for: .normal)
+        floatyButton.backgroundColor = UIColor(named: "TabBar")
         floatyButton.clipsToBounds = true
         floatyButton.layer.cornerRadius = 25
         floatyButton.addTarget(self, action: #selector(floatyButtonClicked(_:)), for:.touchUpInside)
@@ -181,8 +185,9 @@ class ActivityTableViewController: UITableViewController {
     }
     
     @objc private func floatyButtonClicked(_ notification: NSNotification) {
-        //print("\(currentArea)")
-        outputPhoto(area: currentArea)
+        UIView.transition(with: floatyButton, duration: 0.7, options: .transitionFlipFromRight, animations: nil, completion: nil)
+
+        outputPhoto(area: currentArea) //更改輸出城市
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
