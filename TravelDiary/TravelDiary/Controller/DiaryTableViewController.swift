@@ -46,7 +46,7 @@ class DiaryTableViewController: UITableViewController {
 
     // MARK: - UITableView Diffable Data Source
     
-    func configureDataSource() -> UITableViewDiffableDataSource<Section, Diary> {
+    func configureDataSource() -> UITableViewDiffableDataSource<DiarySection, Diary> {
         
         let cellIdentifier = "datacell2"
         
@@ -145,7 +145,7 @@ class DiaryTableViewController: UITableViewController {
         }
         
         //建立快照後填入資料
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Diary>()
+        var snapshot = NSDiffableDataSourceSnapshot<DiarySection, Diary>()
         snapshot.appendSections([.all])
         snapshot.appendItems(diary, toSection: .all)
         

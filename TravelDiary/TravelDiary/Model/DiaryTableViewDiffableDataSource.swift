@@ -7,11 +7,11 @@
 
 import UIKit
 
-enum Section {
+enum DiarySection {
     case all
 }
 
-class DiaryTableViewDiffableDataSource: UITableViewDiffableDataSource<Section, Diary> {
+class DiaryTableViewDiffableDataSource: UITableViewDiffableDataSource<DiarySection, Diary> {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
