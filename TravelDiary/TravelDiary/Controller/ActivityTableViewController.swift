@@ -76,7 +76,8 @@ class ActivityTableViewController: UITableViewController {
     ]
     
     lazy var dataSource = configureDataSource()
-    private let floatyButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    private let floatyButton = UIButton.init(type: .system)
+    //private let floatyButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
     var currentArea:String = "南"
     let city:[[String]] = [["Pingtung", "Kaohsiung", "Tainan", "ChiayiCity", "ChiayiCountry"],
                            ["Yunlin", "Nantou", "Changhua", "Taichung", "Miaoli"],
@@ -155,50 +156,46 @@ class ActivityTableViewController: UITableViewController {
                                 
         dataSource.apply(snapshot, animatingDifferences: false)
         
-        //調整floatyButton位置
-        let tabBar_height = self.tabBarController?.tabBar.frame.size.height ?? 50.0
-        let off = self.tableView.contentOffset.y // 47
-        let yPst = self.view.frame.size.height - tabBar_height - 55
-        floatyButton.frame = CGRect(x: floatyButton.frame.origin.x,
-                              y: off + yPst,
-                              width: floatyButton.frame.size.width,
-                              height: floatyButton.frame.size.height)
-        
         //移至cell最頂端
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     //MARK: -- FloatyButton
     func addFlotyButton() {
-        let tabBar_height = self.tabBarController?.tabBar.frame.size.height ?? 50.0
-        let xPst = self.view.frame.size.width - 55
-        let yPst = self.view.frame.size.height - tabBar_height - 55 //55:floatyButton.height + 5
-        floatyButton.frame = CGRect(x: xPst, y: yPst, width: 50, height: 50)
         floatyButton.setTitle("南", for: .normal)
+        floatyButton.titleLabel?.font =  .systemFont(ofSize: 20)
         floatyButton.setTitleColor(UIColor(named: "NavigationBarTitle"), for: .normal)
         floatyButton.backgroundColor = UIColor(named: "TabBar")
         floatyButton.clipsToBounds = true
         floatyButton.layer.cornerRadius = 25
         floatyButton.addTarget(self, action: #selector(floatyButtonClicked(_:)), for:.touchUpInside)
         
-        view.addSubview(floatyButton)
+        self.view.addSubview(floatyButton)
+        
+        //set constrains
+        //view’s autoresizing mask is not translated into Auto Layout constraints.
+        floatyButton.translatesAutoresizingMaskIntoConstraints = false
+        if #available(iOS 11.0, *) {
+            NSLayoutConstraint.activate([
+                floatyButton.heightAnchor.constraint(equalToConstant: 50),
+                floatyButton.widthAnchor.constraint(equalToConstant: 50),
+                floatyButton.rightAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.rightAnchor, constant: -10),
+                floatyButton.bottomAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                floatyButton.heightAnchor.constraint(equalToConstant: 50),
+                floatyButton.widthAnchor.constraint(equalToConstant: 50),
+                floatyButton.rightAnchor.constraint(equalTo: tableView.layoutMarginsGuide.rightAnchor, constant: 0),
+                floatyButton.bottomAnchor.constraint(equalTo: tableView.layoutMarginsGuide.bottomAnchor, constant: -10)
+            ])
+        }
     }
     
     @objc private func floatyButtonClicked(_ notification: NSNotification) {
         UIView.transition(with: floatyButton, duration: 0.7, options: .transitionFlipFromRight, animations: nil, completion: nil)
 
         outputPhoto(area: currentArea) //更改輸出城市
-    }
-    
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let tabBar_height = self.tabBarController?.tabBar.frame.size.height ?? 50.0
-        let off = self.tableView.contentOffset.y // 47
-        let yPst = self.view.frame.size.height - tabBar_height - 55
-        
-        floatyButton.frame = CGRect(x: floatyButton.frame.origin.x,
-                              y: off + yPst,
-                              width: floatyButton.frame.size.width,
-                              height: floatyButton.frame.size.height)
     }
     //MARK: -- configureDataSource
     func configureDataSource() -> UITableViewDiffableDataSource<ActivitySection, Activity> {
@@ -229,16 +226,6 @@ class ActivityTableViewController: UITableViewController {
         image.contentMode = .scaleAspectFill
         image.frame = CGRect.init(x: 5, y: 5, width: 30, height: 30)
         
-//        if section == 0 {
-//            label.text = "Tainan"
-//            image.image = UIImage(named: "Tainan_logo")
-//        } else if section == 1 {
-//            label.text = "Kaohsiung"
-//            image.image = UIImage(named: "Kaohsiung_logo")
-//        } else {
-//            label.text = "Chiayi"
-//            image.image = UIImage(named: "Chiayi_logo")
-//        }
         if currentArea == "南" {
             for (index, element) in city[0].enumerated() {
                 if section == index {
@@ -284,17 +271,7 @@ class ActivityTableViewController: UITableViewController {
     }
     //MARK: -- 放大圖片
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         openZoomImageViewController(indexPath: indexPath)
-//        switch indexPath.section {
-//        case 0: openZoomImageViewController(indexPath: indexPath)
-//
-//        case 1: openZoomImageViewController(indexPath: indexPath)
-//
-//        case 2: openZoomImageViewController(indexPath: indexPath)
-//        default: break
-//        }
-//
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
