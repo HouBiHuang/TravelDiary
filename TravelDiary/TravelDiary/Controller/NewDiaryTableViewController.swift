@@ -15,9 +15,16 @@ class NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var contentTextView: UITextView! {
         didSet {
-            contentTextView.layer.borderColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).cgColor
-            contentTextView.layer.borderWidth = 1.0
-            contentTextView.layer.cornerRadius = 5.0
+            if self.traitCollection.userInterfaceStyle == .dark {
+                contentTextView.layer.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
+                contentTextView.layer.borderColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
+                contentTextView.layer.borderWidth = 1.0
+                contentTextView.layer.cornerRadius = 5.0
+            } else {
+                contentTextView.layer.borderColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).cgColor
+                contentTextView.layer.borderWidth = 1.0
+                contentTextView.layer.cornerRadius = 5.0
+            }
         }
     }
     

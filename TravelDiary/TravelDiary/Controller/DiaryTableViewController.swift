@@ -166,6 +166,7 @@ class DiaryTableViewController: UITableViewController {
             }
         }
     }
+    
 }
 
 //core data被更改時呼叫
