@@ -13,6 +13,7 @@ public class Diary: NSManagedObject {
         return NSFetchRequest<Diary>(entityName: "Diary")
     }
     
+    @NSManaged public var title: String
     @NSManaged public var content: String
     @NSManaged public var image: Data
     @NSManaged public var date: Date

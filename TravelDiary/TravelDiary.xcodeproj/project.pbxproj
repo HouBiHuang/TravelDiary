@@ -28,6 +28,8 @@
 		4E8950B527686D1E00BAE248 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8950B427686D1E00BAE248 /* ActivityTableViewController.swift */; };
 		4E8950B727686E7D00BAE248 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8950B627686E7D00BAE248 /* ActivityTableViewCell.swift */; };
 		4E8950B92768776B00BAE248 /* ZoomImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8950B82768776B00BAE248 /* ZoomImageViewController.swift */; };
+		4E97531A288A6DF700EDB8BE /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E975319288A6DF700EDB8BE /* DiaryDetailViewController.swift */; };
+		4E97531C288A76BC00EDB8BE /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97531B288A76BC00EDB8BE /* DiaryDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		4E8950B427686D1E00BAE248 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		4E8950B627686E7D00BAE248 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		4E8950B82768776B00BAE248 /* ZoomImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageViewController.swift; sourceTree = "<group>"; };
+		4E975319288A6DF700EDB8BE /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
+		4E97531B288A76BC00EDB8BE /* DiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 				4E6A9108276708040002DAAB /* DiaryTableViewCell.swift */,
 				4E8950B627686E7D00BAE248 /* ActivityTableViewCell.swift */,
 				4E537F49278310A500CC003D /* FriendsBirthdayTableViewCell.swift */,
+				4E97531B288A76BC00EDB8BE /* DiaryDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				4E8950B82768776B00BAE248 /* ZoomImageViewController.swift */,
 				4E537F53278314D300CC003D /* FriendsBirthdayTableViewController.swift */,
 				4E537F5527831D0200CC003D /* AddFriendsBirthdayTableViewController.swift */,
+				4E975319288A6DF700EDB8BE /* DiaryDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E6A910D276708300002DAAB /* Diary.swift in Sources */,
+				4E97531A288A6DF700EDB8BE /* DiaryDetailViewController.swift in Sources */,
 				4E6A90C52766FF4D0002DAAB /* AppDelegate.swift in Sources */,
 				4E537F52278313F600CC003D /* FriendsBirthdayTableViewDiffableDataSource.swift in Sources */,
 				4E8950B92768776B00BAE248 /* ZoomImageViewController.swift in Sources */,
@@ -343,6 +350,7 @@
 				4E6A9109276708040002DAAB /* DiaryTableViewCell.swift in Sources */,
 				4E8950B527686D1E00BAE248 /* ActivityTableViewController.swift in Sources */,
 				4E6A91072767076D0002DAAB /* DiaryTableViewController.swift in Sources */,
+				4E97531C288A76BC00EDB8BE /* DiaryDetailView.swift in Sources */,
 				4E537F5627831D0200CC003D /* AddFriendsBirthdayTableViewController.swift in Sources */,
 				4E537F54278314D300CC003D /* FriendsBirthdayTableViewController.swift in Sources */,
 				4E6A90C72766FF4D0002DAAB /* SceneDelegate.swift in Sources */,

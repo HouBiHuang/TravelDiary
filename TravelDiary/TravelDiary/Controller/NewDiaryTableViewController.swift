@@ -8,20 +8,18 @@
 import UIKit
 import CoreData
 
-class NewDiaryTableViewController: UITableViewController {
+class NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
 
     var diary: Diary!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //按空白處，隱藏鍵盤
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+    @IBOutlet var titleTextField: UITextField!
+    @IBOutlet var contentTextView: UITextView! {
+        didSet {
+            contentTextView.layer.borderColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).cgColor
+            contentTextView.layer.borderWidth = 1.0
+            contentTextView.layer.cornerRadius = 5.0
+        }
     }
-    
-    @IBOutlet var contentTextField: UITextField!
     
     @IBOutlet var photoImageView: UIImageView! {
         didSet {
@@ -32,6 +30,14 @@ class NewDiaryTableViewController: UITableViewController {
     
     @IBOutlet var datePicker: UIDatePicker!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //按空白處，隱藏鍵盤
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
     //MARK: -- 照片選取
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
@@ -80,9 +86,9 @@ class NewDiaryTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonTapped(segue: UIStoryboardSegue) {
-        let contentText = contentTextField.text
-
-        if(contentText == "") {
+        let titleText = titleTextField.text
+        
+        if(titleText == "") {
             let blankController = UIAlertController(title: "Oops", message: "Some of fields is blank", preferredStyle: .alert)
             
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {_ in })
@@ -91,14 +97,15 @@ class NewDiaryTableViewController: UITableViewController {
             present(blankController, animated: true, completion: nil)
         }
         else {
-            print("Name: \(contentText ?? "")")
+            print("Name: \(titleText ?? "")")
 
             //取得所選日期
             let currentDate = self.datePicker.date
             
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) { //取得AppDelegate Object
                 diary = Diary(context: appDelegate.persistentContainer.viewContext)
-                diary.content = contentTextField.text!
+                diary.title = titleTextField.text!
+                diary.content = contentTextView.text!
                 diary.date = currentDate
                 
                 if let imageData = photoImageView.image?.pngData() {
@@ -110,7 +117,6 @@ class NewDiaryTableViewController: UITableViewController {
             }
             dismiss(animated: true, completion: nil)
         }
-        
     }
     
 }

@@ -13,13 +13,12 @@ class DiaryTableViewController: UITableViewController {
     var fetchResultController: NSFetchedResultsController<Diary>! //讀取結果控制器
     
     var diary:[Diary] = []
-    
     lazy var dataSource = configureDataSource()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.prefersLargeTitles = true //大標題
+        navigationController?.navigationBar.prefersLargeTitles = false //大標題
         
         if let appearance = navigationController?.navigationBar.standardAppearance {
             appearance.configureWithTransparentBackground() //設定導覽列為透明＆無陰影
@@ -54,8 +53,8 @@ class DiaryTableViewController: UITableViewController {
             tableView: tableView,
             cellProvider: {  tableView, indexPath, diary in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DiaryTableViewCell
-                
-                cell.contentLabel.text = diary.content
+
+                cell.titleLabel.text = diary.title
                 cell.travelImageView.image = UIImage(data: diary.image)
                 
                 //日期顯示(先把日期轉成字串格式，再顯示)
@@ -157,6 +156,16 @@ class DiaryTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDiaryDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! DiaryDetailViewController
+                destinationController.diary = self.diary[indexPath.row]
+            }
+        }
+    }
 }
 
 //core data被更改時呼叫

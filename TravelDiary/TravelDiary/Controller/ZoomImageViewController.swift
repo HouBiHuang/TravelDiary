@@ -11,7 +11,6 @@ class ZoomImageViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var scrollView: UIScrollView!
-    var image: UIImage?
     var imageName: String?
     
     override func viewDidLoad() {

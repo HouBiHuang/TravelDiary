@@ -26,7 +26,7 @@ class FriendsBirthdayTableViewController: UITableViewController {
 //        } else {
 //            pushNotification
 //        }
-        navigationController?.navigationBar.prefersLargeTitles = true //大標題
+        navigationController?.navigationBar.prefersLargeTitles = false //大標題
         
         if let appearance = navigationController?.navigationBar.standardAppearance {
             appearance.configureWithTransparentBackground() //設定導覽列為透明＆無陰影

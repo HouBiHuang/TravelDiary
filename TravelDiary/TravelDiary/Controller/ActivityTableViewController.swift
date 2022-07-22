@@ -173,7 +173,7 @@ class ActivityTableViewController: UITableViewController {
         self.view.addSubview(floatyButton)
         
         //set constrains
-        //view’s autoresizing mask is not translated into Auto Layout constraints.
+        //不要自動建立layout constraints，要自己建立
         floatyButton.translatesAutoresizingMaskIntoConstraints = false
         if #available(iOS 11.0, *) {
             NSLayoutConstraint.activate([
@@ -283,6 +283,7 @@ class ActivityTableViewController: UITableViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "ZoomImageView") as! ZoomImageViewController
         vc.modalPresentationStyle = .fullScreen
         vc.imageName = activity.activityImages
+    
         present(vc, animated: true)
     }
     

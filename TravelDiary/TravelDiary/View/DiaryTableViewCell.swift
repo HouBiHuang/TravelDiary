@@ -9,7 +9,7 @@ import UIKit
 
 class DiaryTableViewCell: UITableViewCell {
 
-    @IBOutlet var contentLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var travelImageView: UIImageView! {
         didSet {
