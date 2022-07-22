@@ -221,7 +221,9 @@ class ActivityTableViewController: UITableViewController {
         
         let label = UILabel()
         label.frame = CGRect.init(x: 38, y: 7, width: headerView.frame.width, height: headerView.frame.height)
-
+        label.font = .systemFont(ofSize: 25)
+        label.textColor = .label
+        
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.frame = CGRect.init(x: 5, y: 5, width: 30, height: 30)
@@ -256,10 +258,6 @@ class ActivityTableViewController: UITableViewController {
             }
         }
 
-        label.font = .systemFont(ofSize: 25)
-        label.textColor = .black
-
-        
         headerView.addSubview(image)
         headerView.addSubview(label)
         return headerView

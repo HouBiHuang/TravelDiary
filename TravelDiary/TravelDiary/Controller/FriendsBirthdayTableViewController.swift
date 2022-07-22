@@ -71,11 +71,7 @@ class FriendsBirthdayTableViewController: UITableViewController {
                 cell.dateLabel.text = dateString
                 
                 //設定照片
-                guard
-                    let friendImage = UIImage(data: friendsBirthday.image),
-                    let friendCGImage = friendImage.cgImage
-                else { return cell}
-                cell.friendImageView.image = UIImage(cgImage: friendCGImage, scale: friendImage.scale, orientation: .right)
+                cell.friendImageView.image = UIImage(data: friendsBirthday.image)
                 
                 return cell
             }
