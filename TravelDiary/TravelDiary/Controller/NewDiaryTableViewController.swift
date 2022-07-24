@@ -30,7 +30,7 @@ class NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet var photoImageView: UIImageView! {
         didSet {
-            photoImageView.layer.cornerRadius = 10.0
+            photoImageView.layer.cornerRadius = 20.0
             photoImageView.layer.masksToBounds = true
         }
     }

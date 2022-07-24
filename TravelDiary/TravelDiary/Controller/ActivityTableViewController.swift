@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Floaty
 
 class ActivityTableViewController: UITableViewController {
     
@@ -76,8 +77,8 @@ class ActivityTableViewController: UITableViewController {
     ]
     
     lazy var dataSource = configureDataSource()
-    private let floatyButton = UIButton.init(type: .system)
-    //private let floatyButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    let floatyButton = Floaty()
+    
     var currentArea:String = "南"
     let city:[[String]] = [["Pingtung", "Kaohsiung", "Tainan", "ChiayiCity", "ChiayiCountry"],
                            ["Yunlin", "Nantou", "Changhua", "Taichung", "Miaoli"],
@@ -120,55 +121,74 @@ class ActivityTableViewController: UITableViewController {
         //移至cell最頂端
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
-    //MARK: -- OutputPhoto
-    func outputPhoto(area: String) {
-        var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
-        
-        if area == "南" {
-            currentArea = "中"
-            floatyButton.setTitle("中", for: .normal)
-            for (index, element) in city[1].enumerated() {
-                snapshot.appendSections([ActivitySection.allCases[index + 5]])
-                snapshot.appendItems(sectionContent[1][index], toSection: ActivitySection.allCases[index + 5])
-            }
-        } else if area == "中" {
-            currentArea = "北"
-            floatyButton.setTitle("北", for: .normal)
-            for (index, element) in city[2].enumerated() {
-                snapshot.appendSections([ActivitySection.allCases[index + 10]])
-                snapshot.appendItems(sectionContent[2][index], toSection: ActivitySection.allCases[index + 10])
-            }
-        } else if area == "北" {
-            currentArea = "東"
-            floatyButton.setTitle("東", for: .normal)
-            for (index, element) in city[3].enumerated() {
-                snapshot.appendSections([ActivitySection.allCases[index + 17]])
-                snapshot.appendItems(sectionContent[3][index], toSection: ActivitySection.allCases[index + 17])
-            }
-        } else if area == "東" {
-            currentArea = "南"
-            floatyButton.setTitle("南", for: .normal)
-            for (index, element) in city[0].enumerated() {
-                snapshot.appendSections([ActivitySection.allCases[index]])
-                snapshot.appendItems(sectionContent[0][index], toSection: ActivitySection.allCases[index])
-            }
-        }
-                                
-        dataSource.apply(snapshot, animatingDifferences: false)
-        
-        //移至cell最頂端
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-    }
     
     //MARK: -- FloatyButton
     func addFlotyButton() {
-        floatyButton.setTitle("南", for: .normal)
-        floatyButton.titleLabel?.font =  .systemFont(ofSize: 20)
-        floatyButton.setTitleColor(UIColor(named: "NavigationBarTitle"), for: .normal)
-        floatyButton.backgroundColor = UIColor(named: "TabBar")
-        floatyButton.clipsToBounds = true
-        floatyButton.layer.cornerRadius = 25
-        floatyButton.addTarget(self, action: #selector(floatyButtonClicked(_:)), for:.touchUpInside)
+        floatyButton.autoCloseOnOverlayTap = false
+        floatyButton.overlayColor = UIColor(white: 1, alpha: 0) //overlay顏色設為透明
+        floatyButton.buttonImage = UIImage(systemName: "pawprint.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        floatyButton.buttonColor = UIColor(named: "TabBar")!
+        floatyButton.itemTitleColor = .label
+        
+        //南部選項
+        floatyButton.addItem(icon: UIImage(named: "south")!, handler: { item in
+            self.currentArea = "南"
+            var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
+            for (index, element) in self.city[0].enumerated() {
+                snapshot.appendSections([ActivitySection.allCases[index]])
+                snapshot.appendItems(self.sectionContent[0][index], toSection: ActivitySection.allCases[index])
+            }
+            self.dataSource.apply(snapshot, animatingDifferences: false)
+            //移至cell最頂端
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            
+            self.floatyButton.close()
+        })
+        
+        //中部選項
+        floatyButton.addItem(icon: UIImage(named: "central")!, handler: { item in
+            self.currentArea = "中"
+            var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
+            for (index, element) in self.city[1].enumerated() {
+                snapshot.appendSections([ActivitySection.allCases[index + 5]])
+                snapshot.appendItems(self.sectionContent[1][index], toSection: ActivitySection.allCases[index + 5])
+            }
+            self.dataSource.apply(snapshot, animatingDifferences: false)
+            //移至cell最頂端
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            
+            self.floatyButton.close()
+        })
+        
+        //北部選項
+        floatyButton.addItem(icon: UIImage(named: "north")!, handler: { item in
+            self.currentArea = "北"
+            var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
+            for (index, element) in self.city[2].enumerated() {
+                snapshot.appendSections([ActivitySection.allCases[index + 10]])
+                snapshot.appendItems(self.sectionContent[2][index], toSection: ActivitySection.allCases[index + 10])
+            }
+            self.dataSource.apply(snapshot, animatingDifferences: false)
+            //移至cell最頂端
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            
+            self.floatyButton.close()
+        })
+        
+        //東部選項
+        floatyButton.addItem(icon: UIImage(named: "earth")!, handler: { item in
+            self.currentArea = "東"
+            var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
+            for (index, element) in self.city[3].enumerated() {
+                snapshot.appendSections([ActivitySection.allCases[index + 17]])
+                snapshot.appendItems(self.sectionContent[3][index], toSection: ActivitySection.allCases[index + 17])
+            }
+            self.dataSource.apply(snapshot, animatingDifferences: false)
+            //移至cell最頂端
+            self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            
+            self.floatyButton.close()
+        })
         
         self.view.addSubview(floatyButton)
         
@@ -190,12 +210,6 @@ class ActivityTableViewController: UITableViewController {
                 floatyButton.bottomAnchor.constraint(equalTo: tableView.layoutMarginsGuide.bottomAnchor, constant: -10)
             ])
         }
-    }
-    
-    @objc private func floatyButtonClicked(_ notification: NSNotification) {
-        UIView.transition(with: floatyButton, duration: 0.7, options: .transitionFlipFromRight, animations: nil, completion: nil)
-
-        outputPhoto(area: currentArea) //更改輸出城市
     }
     //MARK: -- configureDataSource
     func configureDataSource() -> UITableViewDiffableDataSource<ActivitySection, Activity> {
@@ -228,6 +242,7 @@ class ActivityTableViewController: UITableViewController {
         image.contentMode = .scaleAspectFill
         image.frame = CGRect.init(x: 5, y: 5, width: 30, height: 30)
         
+        //設定每個縣市的標題、照片
         if currentArea == "南" {
             for (index, element) in city[0].enumerated() {
                 if section == index {
@@ -270,6 +285,7 @@ class ActivityTableViewController: UITableViewController {
     //MARK: -- 放大圖片
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         openZoomImageViewController(indexPath: indexPath)
+        self.floatyButton.close()
         tableView.deselectRow(at: indexPath, animated: false)
     }
     

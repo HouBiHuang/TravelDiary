@@ -13,6 +13,7 @@
 		4E537F54278314D300CC003D /* FriendsBirthdayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E537F53278314D300CC003D /* FriendsBirthdayTableViewController.swift */; };
 		4E537F5627831D0200CC003D /* AddFriendsBirthdayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E537F5527831D0200CC003D /* AddFriendsBirthdayTableViewController.swift */; };
 		4E55E195276B8104008E7F7C /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E55E194276B8104008E7F7C /* Pacifico-Regular.ttf */; };
+		4E595F96288CE9CB008494E8 /* Floaty in Frameworks */ = {isa = PBXBuildFile; productRef = 4E595F95288CE9CB008494E8 /* Floaty */; };
 		4E6A90C52766FF4D0002DAAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6A90C42766FF4D0002DAAB /* AppDelegate.swift */; };
 		4E6A90C72766FF4D0002DAAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6A90C62766FF4D0002DAAB /* SceneDelegate.swift */; };
 		4E6A90CC2766FF4D0002DAAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6A90CA2766FF4D0002DAAB /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E595F96288CE9CB008494E8 /* Floaty in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +220,7 @@
 			);
 			name = TravelDiary;
 			packageProductDependencies = (
+				4E595F95288CE9CB008494E8 /* Floaty */,
 			);
 			productName = TravelDiary;
 			productReference = 4E6A90C12766FF4D0002DAAB /* TravelDiary.app */;
@@ -292,6 +295,7 @@
 			);
 			mainGroup = 4E6A90B82766FF4D0002DAAB;
 			packageReferences = (
+				4E595F94288CE9CB008494E8 /* XCRemoteSwiftPackageReference "Floaty" */,
 			);
 			productRefGroup = 4E6A90C22766FF4D0002DAAB /* Products */;
 			projectDirPath = "";
@@ -712,6 +716,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4E595F94288CE9CB008494E8 /* XCRemoteSwiftPackageReference "Floaty" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kciter/Floaty";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4E595F95288CE9CB008494E8 /* Floaty */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E595F94288CE9CB008494E8 /* XCRemoteSwiftPackageReference "Floaty" */;
+			productName = Floaty;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4E6A90CD2766FF4D0002DAAB /* TravelDiary.xcdatamodeld */ = {

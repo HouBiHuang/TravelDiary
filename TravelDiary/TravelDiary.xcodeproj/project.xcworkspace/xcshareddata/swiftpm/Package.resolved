@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "floaty",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kciter/Floaty",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f8f6cf9970a3d92e98fcc2cf123b1bdef15e8778"
+      }
+    }
+  ],
+  "version" : 2
+}
