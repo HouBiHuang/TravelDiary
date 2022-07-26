@@ -21,6 +21,7 @@ class NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
                 contentTextView.layer.borderWidth = 1.0
                 contentTextView.layer.cornerRadius = 5.0
             } else {
+                contentTextView.layer.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
                 contentTextView.layer.borderColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).cgColor
                 contentTextView.layer.borderWidth = 1.0
                 contentTextView.layer.cornerRadius = 5.0
@@ -126,6 +127,25 @@ class NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    func updateContentTextViewStyle() {
+        if self.traitCollection.userInterfaceStyle == .dark {
+            contentTextView.layer.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
+            contentTextView.layer.borderColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
+            contentTextView.layer.borderWidth = 1.0
+            contentTextView.layer.cornerRadius = 5.0
+        } else {
+            contentTextView.layer.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+            contentTextView.layer.borderColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).cgColor
+            contentTextView.layer.borderWidth = 1.0
+            contentTextView.layer.cornerRadius = 5.0
+        }
+    }
+    
+    //判斷當前深淺色模式，並ContentTextView樣式
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateContentTextViewStyle()
+    }
 }
 
 //把索取到的照片顯示出來
