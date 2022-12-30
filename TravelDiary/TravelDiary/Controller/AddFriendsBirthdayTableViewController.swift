@@ -112,7 +112,7 @@ class AddFriendsBirthdayTableViewController: UITableViewController {
             }
             
             //加入時間通知
-            var dateFormatter = DateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM"
             let month = dateFormatter.string(from: currentDate) //取得所選到的月份
             dateFormatter.dateFormat = "dd"
@@ -134,7 +134,7 @@ class AddFriendsBirthdayTableViewController: UITableViewController {
             let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true) //行事曆追蹤器
             
             //設定每一個通知的identifier，以便刪除好友資訊時，順便刪除通知
-            var notificationIdentfier:String = "freind_\(friendsBirthday.name)_\(friendsBirthday.date)"
+            let notificationIdentfier:String = "freind_\(friendsBirthday.name)_\(friendsBirthday.date)"
             
             friendsBirthday.notificationIdentifier = notificationIdentfier //將識別碼存進資料庫
             

@@ -111,7 +111,7 @@ class ActivityTableViewController: UITableViewController {
         addFlotyButton()
         
         var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
-        for (index, element) in city[0].enumerated() {
+        for (index, _) in city[0].enumerated() {
             snapshot.appendSections([ActivitySection.allCases[index]])
             snapshot.appendItems(sectionContent[0][index], toSection: ActivitySection.allCases[index])
         }
@@ -134,7 +134,7 @@ class ActivityTableViewController: UITableViewController {
         floatyButton.addItem(icon: UIImage(named: "south")!, handler: { item in
             self.currentArea = "南"
             var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
-            for (index, element) in self.city[0].enumerated() {
+            for (index, _) in self.city[0].enumerated() {
                 snapshot.appendSections([ActivitySection.allCases[index]])
                 snapshot.appendItems(self.sectionContent[0][index], toSection: ActivitySection.allCases[index])
             }
@@ -149,7 +149,7 @@ class ActivityTableViewController: UITableViewController {
         floatyButton.addItem(icon: UIImage(named: "central")!, handler: { item in
             self.currentArea = "中"
             var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
-            for (index, element) in self.city[1].enumerated() {
+            for (index, _) in self.city[1].enumerated() {
                 snapshot.appendSections([ActivitySection.allCases[index + 5]])
                 snapshot.appendItems(self.sectionContent[1][index], toSection: ActivitySection.allCases[index + 5])
             }
@@ -164,7 +164,7 @@ class ActivityTableViewController: UITableViewController {
         floatyButton.addItem(icon: UIImage(named: "north")!, handler: { item in
             self.currentArea = "北"
             var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
-            for (index, element) in self.city[2].enumerated() {
+            for (index, _) in self.city[2].enumerated() {
                 snapshot.appendSections([ActivitySection.allCases[index + 10]])
                 snapshot.appendItems(self.sectionContent[2][index], toSection: ActivitySection.allCases[index + 10])
             }
@@ -179,7 +179,7 @@ class ActivityTableViewController: UITableViewController {
         floatyButton.addItem(icon: UIImage(named: "earth")!, handler: { item in
             self.currentArea = "東"
             var snapshot = NSDiffableDataSourceSnapshot<ActivitySection, Activity>()
-            for (index, element) in self.city[3].enumerated() {
+            for (index, _) in self.city[3].enumerated() {
                 snapshot.appendSections([ActivitySection.allCases[index + 17]])
                 snapshot.appendItems(self.sectionContent[3][index], toSection: ActivitySection.allCases[index + 17])
             }
