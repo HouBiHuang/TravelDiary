@@ -8,13 +8,14 @@
 import UIKit
 import CoreData
 
-class NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
+class  NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
 
     var diary: Diary!
     
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var contentTextView: UITextView! {
         didSet {
+            //判斷黑暗模式or淺色模式
             if self.traitCollection.userInterfaceStyle == .dark {
                 contentTextView.layer.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
                 contentTextView.layer.borderColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
@@ -141,7 +142,7 @@ class NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    //判斷當前深淺色模式，並ContentTextView樣式
+    //暗黑模式更改時呼叫
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         updateContentTextViewStyle()
