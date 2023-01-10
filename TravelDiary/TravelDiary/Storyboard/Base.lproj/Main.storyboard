@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wsQ-md-W18">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wsQ-md-W18">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,7 +20,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="330" id="QK8-aG-BUY" customClass="DiaryTableViewCell" customModule="TravelDiary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="330"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="330"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QK8-aG-BUY" id="l14-ZD-6te">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
@@ -68,7 +69,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell2" rowHeight="280" id="Cs0-bI-rEK" customClass="DiaryTableViewCell" customModule="TravelDiary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="374.5" width="414" height="280"/>
+                                <rect key="frame" x="0.0" y="380" width="414" height="280"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cs0-bI-rEK" id="DM0-p7-DvL">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
@@ -145,19 +146,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdL-FO-KWL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="27.5"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="27.5"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                 <color key="textColor" name="NavigationBarTitle"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RZ9-eH-fKg">
-                                <rect key="frame" x="20" y="123.5" width="374" height="200"/>
+                                <rect key="frame" x="20" y="127.5" width="374" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="0OL-6o-0QI"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bBA-Bs-EQ5">
-                                <rect key="frame" x="20" y="331.5" width="374" height="481.5"/>
+                                <rect key="frame" x="20" y="335.5" width="374" height="477.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -198,15 +199,15 @@
         <scene sceneID="2NE-4H-yMD">
             <objects>
                 <tableViewController id="Qod-jv-um1" customClass="NewDiaryTableViewController" customModule="TravelDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Xzr-2T-V4I">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Xzr-2T-V4I" customClass="NewDiaryTableView" customModule="TravelDiary" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
                             <tableViewSection id="075-Eq-8t0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="Xcd-hV-ws4">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xcd-hV-ws4" id="oSk-fG-0IJ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -228,7 +229,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="GDl-UE-bku">
-                                        <rect key="frame" x="0.0" y="244.5" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="250" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GDl-UE-bku" id="iuA-Z3-9fJ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -260,7 +261,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="7iC-00-ZOL">
-                                        <rect key="frame" x="0.0" y="344.5" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="350" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7iC-00-ZOL" id="HmC-wo-mDF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -277,13 +278,20 @@
                                                         </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7kq-h7-dtE">
                                                             <rect key="frame" x="0.0" y="28" width="350" height="100"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="fpL-lR-5om"/>
                                                             </constraints>
                                                             <color key="textColor" systemColor="labelColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <integer key="value" value="0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </textView>
                                                     </subviews>
                                                     <constraints>
@@ -301,7 +309,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ec0-L8-prU">
-                                        <rect key="frame" x="0.0" y="494.5" width="414" height="234.5"/>
+                                        <rect key="frame" x="0.0" y="500" width="414" height="234.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ec0-L8-prU" id="5Uj-DC-stk">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="234.5"/>
@@ -323,8 +331,10 @@
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="Qod-jv-um1" id="GDd-7Q-vM1"/>
-                            <outlet property="delegate" destination="Qod-jv-um1" id="uCT-mW-UaW"/>
+                            <outlet property="contentTextView" destination="7kq-h7-dtE" id="Ur9-1O-KjF"/>
+                            <outlet property="datePicker" destination="Fu9-zu-Wki" id="6LJ-88-lAy"/>
+                            <outlet property="photoImageView" destination="223-do-S8K" id="56V-gf-3Hw"/>
+                            <outlet property="titleTextField" destination="eg0-Yl-mnu" id="fIk-sF-MJj"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Diary" id="Fdv-ba-Jap">
@@ -335,10 +345,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="contentTextView" destination="7kq-h7-dtE" id="kEW-be-lz6"/>
-                        <outlet property="datePicker" destination="Fu9-zu-Wki" id="Pyx-Jq-KHj"/>
-                        <outlet property="photoImageView" destination="223-do-S8K" id="rka-D3-Kvo"/>
-                        <outlet property="titleTextField" destination="eg0-Yl-mnu" id="TQC-T0-3An"/>
+                        <outlet property="newDiaryTableView" destination="Xzr-2T-V4I" id="Xc6-BU-dCx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pok-iA-DBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -349,15 +356,15 @@
         <scene sceneID="tkf-uf-mVH">
             <objects>
                 <tableViewController id="DwQ-ZY-fm0" customClass="AddFriendsBirthdayTableViewController" customModule="TravelDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="KPv-zU-C08">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="KPv-zU-C08" customClass="AddFriendsBirthdayTableView" customModule="TravelDiary" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
                             <tableViewSection id="0to-3S-Q9N">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="Zf5-yK-bzd">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zf5-yK-bzd" id="pGB-79-IM3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -380,7 +387,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="uxT-Lz-b1O">
-                                        <rect key="frame" x="0.0" y="244.5" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="250" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uxT-Lz-b1O" id="5zh-hg-3Bp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -412,7 +419,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mQg-TR-B7B">
-                                        <rect key="frame" x="0.0" y="344.5" width="414" height="234.5"/>
+                                        <rect key="frame" x="0.0" y="350" width="414" height="234.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mQg-TR-B7B" id="neN-Vx-bmi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="234.5"/>
@@ -435,7 +442,10 @@
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="DwQ-ZY-fm0" id="jcN-JD-vo6"/>
+                            <outlet property="datePicker" destination="w1h-OI-FuL" id="4f4-2w-EPx"/>
                             <outlet property="delegate" destination="DwQ-ZY-fm0" id="cvf-IJ-TFD"/>
+                            <outlet property="nameTextField" destination="yHT-Ny-Ww2" id="bUO-Br-avB"/>
+                            <outlet property="photoImageView" destination="HZS-eO-3D1" id="0ka-8b-CgO"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add friend's birthday" id="ZIO-yh-4WS">
@@ -446,9 +456,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="w1h-OI-FuL" id="WXv-uR-FQv"/>
-                        <outlet property="nameTextField" destination="yHT-Ny-Ww2" id="tZd-Xa-bKd"/>
-                        <outlet property="photoImageView" destination="HZS-eO-3D1" id="hBW-jo-dcf"/>
+                        <outlet property="addFriendsBirthdayTableView" destination="KPv-zU-C08" id="rsB-xd-33P"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRg-U0-GRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -462,7 +470,7 @@
                     <tabBarItem key="tabBarItem" title="Diary" image="book.fill" catalog="system" id="nyc-Ak-MfU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Ex-95-fOw">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -484,7 +492,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityDatacell" rowHeight="250" id="jAd-37-rC9" customClass="ActivityTableViewCell" customModule="TravelDiary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="250"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jAd-37-rC9" id="cwf-IB-qQb">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -531,7 +539,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendDataCell" rowHeight="300" id="9Z0-pY-91i" customClass="FriendsBirthdayTableViewCell" customModule="TravelDiary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Z0-pY-91i" id="6mU-kB-NFI">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -547,14 +555,14 @@
                                                         <constraint firstAttribute="height" constant="220" id="oIL-XW-JR6"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uf-q3-w4d">
-                                                    <rect key="frame" x="75.5" y="228" width="69.5" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uf-q3-w4d">
+                                                    <rect key="frame" x="71" y="228" width="78" height="33.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZp-Jo-gQ4">
-                                                    <rect key="frame" x="78.5" y="266" width="63.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZp-Jo-gQ4">
+                                                    <rect key="frame" x="73.5" y="269.5" width="73.5" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -598,15 +606,15 @@
         <scene sceneID="69h-Ru-dAM">
             <objects>
                 <viewController storyboardIdentifier="ZoomImageView" id="Q3E-NU-EWg" customClass="ZoomImageViewController" customModule="TravelDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hFJ-DP-xUe">
+                    <view key="view" contentMode="scaleToFill" id="hFJ-DP-xUe" customClass="ZoomImageView" customModule="TravelDiary" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n71-nw-lNA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KZX-CR-9wi">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -627,10 +635,13 @@
                             <constraint firstItem="n71-nw-lNA" firstAttribute="bottom" secondItem="fmT-0d-wSQ" secondAttribute="bottom" id="lMI-uF-Bm4"/>
                             <constraint firstItem="n71-nw-lNA" firstAttribute="trailing" secondItem="fmT-0d-wSQ" secondAttribute="trailing" id="xnN-70-v3N"/>
                         </constraints>
+                        <connections>
+                            <outlet property="imageView" destination="KZX-CR-9wi" id="X2n-EF-QTM"/>
+                            <outlet property="scrollView" destination="n71-nw-lNA" id="OPT-js-yem"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="KZX-CR-9wi" id="EOp-Ye-GDa"/>
-                        <outlet property="scrollView" destination="n71-nw-lNA" id="zfG-H1-0sV"/>
+                        <outlet property="zoomImageView" destination="hFJ-DP-xUe" id="jDO-NP-qIR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skL-Hl-jVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -681,7 +692,7 @@
                     <tabBarItem key="tabBarItem" title="Friends" image="person.3.fill" catalog="system" id="JeJ-tk-XeH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gQw-Kx-W8u">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -722,7 +733,7 @@
             <color red="0.38299998641014099" green="0.035000000149011612" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

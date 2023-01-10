@@ -116,11 +116,6 @@ class DiaryTableViewController: UITableViewController {
         //從資料庫取得資料
         let fetchRequest: NSFetchRequest<Diary> = Diary.fetchRequest() //取得fetchRequest物件
         
-        //檢查搜尋內容是否為空
-        /*if !searchText.isEmpty {
-            fetchRequest.predicate = NSPredicate(format: "name CONTAINS[c] %@ OR location CONTAINS[c] %@", searchText, searchText)
-        }*/
-        
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false) //用date做排序
         fetchRequest.sortDescriptors = [sortDescriptor]
         

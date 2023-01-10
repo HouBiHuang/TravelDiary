@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E39A9F9296D4145004DBB15 /* ZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E39A9F8296D4145004DBB15 /* ZoomImageView.swift */; };
+		4E39A9FB296D43F5004DBB15 /* NewDiaryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E39A9FA296D43F5004DBB15 /* NewDiaryTableView.swift */; };
+		4E39A9FD296D4505004DBB15 /* AddFriendsBirthdayTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E39A9FC296D4505004DBB15 /* AddFriendsBirthdayTableView.swift */; };
 		4E537F4A278310A500CC003D /* FriendsBirthdayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E537F49278310A500CC003D /* FriendsBirthdayTableViewCell.swift */; };
 		4E537F502783138600CC003D /* FriendsBirthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E537F4F2783138600CC003D /* FriendsBirthday.swift */; };
 		4E537F52278313F600CC003D /* FriendsBirthdayTableViewDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E537F51278313F600CC003D /* FriendsBirthdayTableViewDiffableDataSource.swift */; };
@@ -51,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E39A9F8296D4145004DBB15 /* ZoomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageView.swift; sourceTree = "<group>"; };
+		4E39A9FA296D43F5004DBB15 /* NewDiaryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryTableView.swift; sourceTree = "<group>"; };
+		4E39A9FC296D4505004DBB15 /* AddFriendsBirthdayTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsBirthdayTableView.swift; sourceTree = "<group>"; };
 		4E537F49278310A500CC003D /* FriendsBirthdayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsBirthdayTableViewCell.swift; sourceTree = "<group>"; };
 		4E537F4F2783138600CC003D /* FriendsBirthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsBirthday.swift; sourceTree = "<group>"; };
 		4E537F51278313F600CC003D /* FriendsBirthdayTableViewDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsBirthdayTableViewDiffableDataSource.swift; sourceTree = "<group>"; };
@@ -185,6 +191,9 @@
 				4E8950B627686E7D00BAE248 /* ActivityTableViewCell.swift */,
 				4E537F49278310A500CC003D /* FriendsBirthdayTableViewCell.swift */,
 				4E97531B288A76BC00EDB8BE /* DiaryDetailView.swift */,
+				4E39A9F8296D4145004DBB15 /* ZoomImageView.swift */,
+				4E39A9FA296D43F5004DBB15 /* NewDiaryTableView.swift */,
+				4E39A9FC296D4505004DBB15 /* AddFriendsBirthdayTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -345,11 +354,14 @@
 				4E97531A288A6DF700EDB8BE /* DiaryDetailViewController.swift in Sources */,
 				4E6A90C52766FF4D0002DAAB /* AppDelegate.swift in Sources */,
 				4E537F52278313F600CC003D /* FriendsBirthdayTableViewDiffableDataSource.swift in Sources */,
+				4E39A9FD296D4505004DBB15 /* AddFriendsBirthdayTableView.swift in Sources */,
 				4E8950B92768776B00BAE248 /* ZoomImageViewController.swift in Sources */,
 				4E8950B727686E7D00BAE248 /* ActivityTableViewCell.swift in Sources */,
 				4E537F502783138600CC003D /* FriendsBirthday.swift in Sources */,
 				4E537F4A278310A500CC003D /* FriendsBirthdayTableViewCell.swift in Sources */,
 				4E6A9111276717AA0002DAAB /* NewDiaryTableViewController.swift in Sources */,
+				4E39A9FB296D43F5004DBB15 /* NewDiaryTableView.swift in Sources */,
+				4E39A9F9296D4145004DBB15 /* ZoomImageView.swift in Sources */,
 				4E6A910B276708270002DAAB /* DiaryTableViewDiffableDataSource.swift in Sources */,
 				4E6A9109276708040002DAAB /* DiaryTableViewCell.swift in Sources */,
 				4E8950B527686D1E00BAE248 /* ActivityTableViewController.swift in Sources */,

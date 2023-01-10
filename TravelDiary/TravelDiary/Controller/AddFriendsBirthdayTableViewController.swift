@@ -13,17 +13,7 @@ import Foundation
 class AddFriendsBirthdayTableViewController: UITableViewController {
 
     var friendsBirthday: FriendsBirthday!
-    
-    @IBOutlet var nameTextField: UITextField!
-    
-    @IBOutlet var photoImageView: UIImageView! {
-        didSet {
-            photoImageView.layer.cornerRadius = photoImageView.frame.height / 2
-            photoImageView.clipsToBounds = true
-        }
-    }
-    
-    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var addFriendsBirthdayTableView: AddFriendsBirthdayTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +72,7 @@ class AddFriendsBirthdayTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonTapped(segue: UIStoryboardSegue) {
-        let nameText = nameTextField.text
+        let nameText = addFriendsBirthdayTableView.nameTextField.text
 
         if(nameText == "") {
             let blankController = UIAlertController(title: "Oops", message: "Some of fields is blank", preferredStyle: .alert)
@@ -96,14 +86,14 @@ class AddFriendsBirthdayTableViewController: UITableViewController {
             print("Name: \(nameText ?? "")")
 
             //取得所選日期
-            let currentDate = self.datePicker.date
+            let currentDate = addFriendsBirthdayTableView.datePicker.date
             
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) { //取得AppDelegate Object
                 friendsBirthday = FriendsBirthday(context: appDelegate.persistentContainer.viewContext)
-                friendsBirthday.name = nameTextField.text!
+                friendsBirthday.name = addFriendsBirthdayTableView.nameTextField.text!
                 friendsBirthday.date = currentDate
                 
-                if let imageData = photoImageView.image?.pngData() {
+                if let imageData = addFriendsBirthdayTableView.photoImageView.image?.pngData() {
                     friendsBirthday.image = imageData
                 }
                 
@@ -153,9 +143,9 @@ extension AddFriendsBirthdayTableViewController: UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            photoImageView.image = selectedImage
-            photoImageView.contentMode = .scaleAspectFill
-            photoImageView.clipsToBounds = true
+            addFriendsBirthdayTableView.photoImageView.image = selectedImage
+            addFriendsBirthdayTableView.photoImageView.contentMode = .scaleAspectFill
+            addFriendsBirthdayTableView.photoImageView.clipsToBounds = true
         }
         
         dismiss(animated: true, completion: nil)

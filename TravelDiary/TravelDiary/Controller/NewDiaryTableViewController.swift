@@ -8,36 +8,10 @@
 import UIKit
 import CoreData
 
-class  NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
+class NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
 
     var diary: Diary!
-    
-    @IBOutlet var titleTextField: UITextField!
-    @IBOutlet var contentTextView: UITextView! {
-        didSet {
-            //判斷黑暗模式or淺色模式
-            if self.traitCollection.userInterfaceStyle == .dark {
-                contentTextView.layer.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
-                contentTextView.layer.borderColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
-                contentTextView.layer.borderWidth = 1.0
-                contentTextView.layer.cornerRadius = 5.0
-            } else {
-                contentTextView.layer.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
-                contentTextView.layer.borderColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).cgColor
-                contentTextView.layer.borderWidth = 1.0
-                contentTextView.layer.cornerRadius = 5.0
-            }
-        }
-    }
-    
-    @IBOutlet var photoImageView: UIImageView! {
-        didSet {
-            photoImageView.layer.cornerRadius = 20.0
-            photoImageView.layer.masksToBounds = true
-        }
-    }
-    
-    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var newDiaryTableView: NewDiaryTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +69,7 @@ class  NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveButtonTapped(segue: UIStoryboardSegue) {
-        let titleText = titleTextField.text
+        let titleText = newDiaryTableView.titleTextField.text
         
         if(titleText == "") {
             let blankController = UIAlertController(title: "Oops", message: "Some of fields is blank", preferredStyle: .alert)
@@ -109,15 +83,15 @@ class  NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
             print("Name: \(titleText ?? "")")
 
             //取得所選日期
-            let currentDate = self.datePicker.date
+            let currentDate = newDiaryTableView.datePicker.date
             
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) { //取得AppDelegate Object
                 diary = Diary(context: appDelegate.persistentContainer.viewContext)
-                diary.title = titleTextField.text!
-                diary.content = contentTextView.text!
+                diary.title = newDiaryTableView.titleTextField.text!
+                diary.content = newDiaryTableView.contentTextView.text!
                 diary.date = currentDate
                 
-                if let imageData = photoImageView.image?.pngData() {
+                if let imageData = newDiaryTableView.photoImageView.image?.pngData() {
                     diary.image = imageData
                 }
                 
@@ -130,19 +104,19 @@ class  NewDiaryTableViewController: UITableViewController, UITextFieldDelegate {
     
     func updateContentTextViewStyle() {
         if self.traitCollection.userInterfaceStyle == .dark {
-            contentTextView.layer.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
-            contentTextView.layer.borderColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
-            contentTextView.layer.borderWidth = 1.0
-            contentTextView.layer.cornerRadius = 5.0
+            newDiaryTableView.contentTextView.layer.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
+            newDiaryTableView.contentTextView.layer.borderColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
+            newDiaryTableView.contentTextView.layer.borderWidth = 1.0
+            newDiaryTableView.contentTextView.layer.cornerRadius = 5.0
         } else {
-            contentTextView.layer.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
-            contentTextView.layer.borderColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).cgColor
-            contentTextView.layer.borderWidth = 1.0
-            contentTextView.layer.cornerRadius = 5.0
+            newDiaryTableView.contentTextView.layer.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor
+            newDiaryTableView.contentTextView.layer.borderColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).cgColor
+            newDiaryTableView.contentTextView.layer.borderWidth = 1.0
+            newDiaryTableView.contentTextView.layer.cornerRadius = 5.0
         }
     }
     
-    //暗黑模式更改時呼叫
+    //判別當前黑暗模式
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         updateContentTextViewStyle()
@@ -154,9 +128,9 @@ extension NewDiaryTableViewController: UIImagePickerControllerDelegate, UINaviga
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            photoImageView.image = selectedImage
-            photoImageView.contentMode = .scaleAspectFill
-            photoImageView.clipsToBounds = true
+            newDiaryTableView.photoImageView.image = selectedImage
+            newDiaryTableView.photoImageView.contentMode = .scaleAspectFill
+            newDiaryTableView.photoImageView.clipsToBounds = true
         }
         
         dismiss(animated: true, completion: nil)
